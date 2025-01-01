@@ -6,7 +6,7 @@ function TodoApp() {
   const [task, setTask] = useState("");
 
   useEffect(() => {
-    axios.get('http:/44.201.114.173/:9086/api/todos')
+    axios.get('http://44.201.114.173:9086/api/todos')
       .then(response => setTodos(response.data))
       .catch(error => console.log(error));
   }, []);
