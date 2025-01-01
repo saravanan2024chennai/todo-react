@@ -6,14 +6,14 @@ function TodoApp() {
   const [task, setTask] = useState("");
 
   useEffect(() => {
-    axios.get('http://localhost:9086/api/todos')
+    axios.get('http://44.207.3.185:9086/api/todos')
       .then(response => setTodos(response.data))
       .catch(error => console.log(error));
   }, []);
 
   const addTodo = () => {
     const newTodo = { task, completed: false };
-    axios.post('http://localhost:9086/api/todos', newTodo)
+    axios.post('http://44.207.3.185:9086/api/todos', newTodo)
       .then(response => setTodos([...todos, response.data]))
       .catch(error => console.log(error));
   };
